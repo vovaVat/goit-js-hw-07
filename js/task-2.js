@@ -28,6 +28,6 @@ const images = [
 
 const galeryList= document.querySelector(".gallery");
 
-images.forEach((obj) => {
-  galeryList.insertAdjacentHTML('beforeend', `<li><img src="${obj.url}" alt="${obj.alt}" style="width: 300px; height: auto;" /></li>`);
-})
+const galleryItems = images.map((obj) => `<li><img src="${obj.url}" alt="${obj.alt}" style="width: 300px; height: auto;" /></li>`).join("");
+
+galeryList.insertAdjacentHTML('beforeend', galleryItems);
